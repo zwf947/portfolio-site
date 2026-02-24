@@ -1,0 +1,173 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, sans-serif;
+  background: #0b0f19;
+  color: #1a7d39;
+}
+a { color: inherit; }
+.wrap { width: min(1000px, 92vw); margin: 0 auto; }
+
+.site-header {
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  background: radial-gradient(1000px 500px at 20% 0%, rgba(255,255,255,0.08), transparent);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  gap: 12px;
+}
+.topbar-right a { margin-left: 14px; text-decoration: none; opacity: 0.9; }
+.topbar-right a:hover { opacity: 1; text-decoration: underline; }
+
+.phone { text-decoration: none; font-weight: 700; }
+.muted { opacity: 0.8; }
+
+.hero { padding: 28px 0 42px; }
+.kicker { letter-spacing: 0.6px; text-transform: uppercase; font-size: 0.85rem; opacity: 0.85; }
+h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 10px 0 8px; }
+.subtitle {
+  max-width: 72ch;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0;
+  font-size: 1rem;       
+}
+
+.hero-bullets { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-bullets span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  font-size: 0.9rem;
+}
+
+.section { padding: 56px 0; }
+h2 { font-size: 1.6rem; margin: 0 0 18px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+.card.dim { opacity: 0.75; }
+.card h3 { margin: 0 0 8px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tags span {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  opacity: 0.9;
+}
+
+.links { margin-top: 12px; display: flex; gap: 12px; }
+.links a { text-decoration: none; opacity: 0.95; }
+.links a:hover { text-decoration: underline; }
+
+.list { margin: 0; padding-left: 18px; line-height: 1.8; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.10);
+}
+.btn:hover { background: rgba(255,255,255,0.14); }
+.btn.ghost { background: transparent; }
+
+.hero-cta { margin-top: 18px; display: flex; gap: 12px; }
+.footer { padding: 28px 0 40px; opacity: 0.8; }
+/* Hero layout with image */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 500px;
+}
+
+.hero-image {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 180px;
+    height: 180px;
+  }
+}
+/* Call Now Button */
+.call-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: #2ecc71;
+  color: #0b0f19;
+  transition: all 0.2s ease;
+}
+
+.call-btn:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+/* Featured Projects Background */
+.projects-bg {
+  position: relative;
+  background: url("hard.png") center/cover no-repeat;
+  padding: 80px 0;
+}
+
+/* Dark overlay so text stays readable */
+.projects-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.85);
+  z-index: 0;
+}
+
+/* Make content appear above overlay */
+.projects-bg > * {
+  position: relative;
+  z-index: 1;
+}
